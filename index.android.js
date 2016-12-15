@@ -9,21 +9,39 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TextInput
 } from 'react-native';
 
 export default class Home extends Component {
+  state = {
+    amountTotal: 0,
+    tipPercentage: 0.15,
+    tipTotal: 0
+  };
+
+  calculateTip(value) {
+    console.log(value);
+    this.state.amountTotal = value;
+    this.state.tipTotal = value * this.state.tipPercentage;
+    this.setState(this.state);
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Selamat Datang Lutfi!
+        <Text>
+          Amount Total:
         </Text>
-        <Text style={styles.instructions}>
-          React Native Emang Keren!
+        <TextInput
+          style={styles.textInput}
+          onChangeText={this.calculateTip.bind(this)}>
+        </TextInput>
+        <Text>
+          Total Tip:
         </Text>
-        <Text style={styles.instructions}>
-          Tekan R dua kali untuk reload,{'\n'}
+        <Text style={styles.amount}>
+          ${this.state.tipTotal.toFixed(2)}
         </Text>
       </View>
     );
@@ -37,16 +55,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
+  textInput: {
+    textAlign: 'left',
     color: '#333333',
-    marginBottom: 5,
+    margin: 5,
+    height: 50,
+    width: 200,
+    borderColor: '#60b7e2',
+    borderWidth: 1
   },
+  amount: {
+    fontWeight: 'bold',
+    textAlign: 'left'
+  }
+
 });
 
 AppRegistry.registerComponent('Home', () => Home);
