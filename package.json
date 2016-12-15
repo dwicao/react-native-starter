@@ -1,8 +1,9 @@
 {
-	"name": "AwesomeProject",
+	"name": "Home",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
+		"release": "(cd android && ./gradlew assembleRelease)",
 		"signer": "(cd  android/app/build/outputs/apk/ && jarsigner -verbose -keystore ~/.android/debug.keystore -storepass android -keypass android app-release-unsigned.apk  androiddebugkey)",
     "build": "(cd android/ && ./gradlew assembleDebug)",
     "start": "node node_modules/react-native/local-cli/cli.js start",

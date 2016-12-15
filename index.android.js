@@ -12,21 +12,18 @@ import {
   View
 } from 'react-native';
 
-export default class AwesomeProject extends Component {
+export default class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Selamat datang Lutfi!
+          Selamat Datang Lutfi!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.android.js
+          React Native Emang Keren!
         </Text>
         <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu.{'\n'}
-          Ini sumpah keren banget,{'\n'}
-          Bisa RN di Elementary OS :)
+          Tekan R dua kali untuk reload,{'\n'}
         </Text>
       </View>
     );
@@ -44,7 +41,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     textAlign: 'center',
     margin: 10,
-    color: '#99ccff'
   },
   instructions: {
     textAlign: 'center',
@@ -53,4 +49,4 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('AwesomeProject', () => AwesomeProject);
+AppRegistry.registerComponent('Home', () => Home);
