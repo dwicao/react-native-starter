@@ -21,7 +21,6 @@ export default class Home extends Component {
   };
 
   calculateTip(value) {
-    console.log(value);
     this.state.amountTotal = value;
     this.state.tipTotal = value * this.state.tipPercentage;
     this.setState(this.state);
